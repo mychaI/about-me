@@ -96,13 +96,7 @@ class Main extends React.Component {
             <img src={pic03} alt="" />
           </span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
+		  I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by RabbitMQ, deployed serverless functions on AWS Lambda, and designed a GraphQL API gateway. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. I currently reside in Southern California.
           </p>
           {close}
         </article>

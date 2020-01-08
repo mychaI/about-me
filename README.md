@@ -1,12 +1,11 @@
-# gatsby-starter-dimension
+# About Me
 
-**This is a starter for Gatsby.js V2.**
+**This is the landing page for Mychal Estalilla**
 
-**The older V1 version of this starter can be found on the v1 branch:**
+**About this site**
+This site is built on Gatsby on top of React. The design is courtesy of HTML5UP.
 
-Gatsby.js V2 starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters-and-themes/ for more Gatsby starters and templates.
-
-## Preview
+## Projects
 
 https://gatsby-dimension.surge.sh/
 
