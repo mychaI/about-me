@@ -28,30 +28,16 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">Posts</h2>
           <span className="image main">
             <img src={pic01} alt="" />
           </span>
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
-          </p>
+            Some articles I've written. Be sure to check out some of my <a href="#work">other work</a>.
+		  </p>
+		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/>A Brief Intro to GraphQL</div>
+		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
+		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
           {close}
         </article>
 
@@ -66,21 +52,30 @@ class Main extends React.Component {
           <span className="image main">
             <img src={pic02} alt="" />
           </span>
-          <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
-          </p>
-          <p>
-            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-            Pellentesque condimentum sem. In efficitur ligula tate urna.
-            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-            tempus.
-          </p>
+		  <b>Starfleet | CLI tool to generate GraphQL projects from existing MongoDB models</b>
+			<div>  ○ Frontend UI built with React. State management is handled with Redux </div>
+			<div>  ○ Client requests are routed through a GraphQL API gateway. </div>
+			<div>  ○ Authentication is handled via AWS Lambda functions. Encrypted user data is stored on DynamoDB. </div>
+			<div>  ○ Main application is built with a Node.js/Express backend </div>
+			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ message broker. </div>
+			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
+			<br/>
+		  <b>VirtualGroove | Streaming music player w/ algorithm-based recommendations</b>
+			<div>  ○ Frontend UI built with React. State management is handled with Redux </div>
+			<div>  ○ Client requests are routed through a GraphQL API gateway. </div>
+			<div>  ○ Authentication is handled via AWS Lambda functions. Encrypted user data is stored on DynamoDB. </div>
+			<div>  ○ Main application is built with a Node.js/Express backend </div>
+			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ message broker. </div>
+			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
+			<br />
+		  <b>Campfires | Social-networking site that let's you better tell your story</b>
+			<div>  ○ Frontend UI built with React. State management is handled with Redux </div>
+			<div>  ○ Client requests are routed through a GraphQL API gateway. </div>
+			<div>  ○ Authentication is handled via AWS Lambda functions. Encrypted user data is stored on DynamoDB. </div>
+			<div>  ○ Main application is built with a Node.js/Express backend </div>
+			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ message broker. </div>
+			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
+			<br />
           {close}
         </article>
 
@@ -133,26 +128,18 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li>
-              <a
-                href="https://twitter.com/HuntaroSan"
-                className="icon fa-twitter"
-              >
-                <span className="label">Twitter</span>
+              <a href="mailto:mychal.es@protonmail.com" className="icon fa-envelope">
+                <span className="label">Email</span>
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com" className="icon fa-facebook">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://codebushi.com" className="icon fa-instagram">
-                <span className="label">Instagram</span>
+			  <a href="https://linkedin.com/in/mychale" className="icon fa-linkedin">
+                <span className="label">LinkedIn</span>
               </a>
             </li>
             <li>
               <a
-                href="https://github.com/codebushi/gatsby-starter-dimension"
+                href="https://github.com/mychaI"
                 className="icon fa-github"
               >
                 <span className="label">GitHub</span>
