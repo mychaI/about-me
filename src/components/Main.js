@@ -33,9 +33,9 @@ class Main extends React.Component {
             <img src={pic01} alt="" />
           </span>
           <p>
-            Some articles I've written. Be sure to check out some of my <a href="#work">other work</a>.
+            Some articles I've written. Feel free to check out some of my <a href="#work">other work</a>.
 		  </p>
-		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/>A Brief Intro to GraphQL</div>
+		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Intro to GraphQL</a></div>
 		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
 		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
           {close}
@@ -53,28 +53,23 @@ class Main extends React.Component {
             <img src={pic02} alt="" />
           </span>
 		  <b>Starfleet | CLI tool to generate GraphQL projects from existing MongoDB models</b>
-			<div>  ○ Frontend UI built with React. State management is handled with Redux </div>
-			<div>  ○ Client requests are routed through a GraphQL API gateway. </div>
-			<div>  ○ Authentication is handled via AWS Lambda functions. Encrypted user data is stored on DynamoDB. </div>
-			<div>  ○ Main application is built with a Node.js/Express backend </div>
-			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ message broker. </div>
-			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
+			<div>  ○ Generate GraphQL schema and resolvers with one command from the terminal </div>
+			<div>  ○ Deploy projects via Docker containers for rapid development and testing </div>
+			<div>  ○ Data-model driven development: start with your MongoDB/Mongoose schemas first and use Starfleet to create an app with CRUD functionality in seconds </div>
+			<div>  ○ Reduces the need to write boilerplate and configuration code. Get up and running wth GraphQL instantly </div>
 			<br/>
 		  <b>VirtualGroove | Streaming music player w/ algorithm-based recommendations</b>
-			<div>  ○ Frontend UI built with React. State management is handled with Redux </div>
-			<div>  ○ Client requests are routed through a GraphQL API gateway. </div>
-			<div>  ○ Authentication is handled via AWS Lambda functions. Encrypted user data is stored on DynamoDB. </div>
-			<div>  ○ Main application is built with a Node.js/Express backend </div>
-			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ message broker. </div>
+			<div>  ○ Front end UI built using React. State is managed through Redux to avoid prop drilling</div>
+			<div>  ○ Client requests pass through a GraphQL gateway which routes to the proper service </div>
+			<div>  ○ Auth flow is handled via AWS Lambda. Encrypted user data is stored on DynamoDB </div>
+			<div>  ○ Main application is built with a Node.js/Express backend serving a RESTful API </div>
+			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ broker. Real-time updates are pushed to the client via Socket.io </div>
 			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
 			<br />
 		  <b>Campfires | Social-networking site that let's you better tell your story</b>
-			<div>  ○ Frontend UI built with React. State management is handled with Redux </div>
-			<div>  ○ Client requests are routed through a GraphQL API gateway. </div>
-			<div>  ○ Authentication is handled via AWS Lambda functions. Encrypted user data is stored on DynamoDB. </div>
-			<div>  ○ Main application is built with a Node.js/Express backend </div>
-			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ message broker. </div>
-			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
+			<div>  ○ Single-page application that utilizes modular React components and Redux for state </div>
+			<div>  ○ Data is stored in a non-relational database for faster development and scaling </div>
+			<div>  ○ Authentication is enforced via Passport.js middleware and private route components in conjunction with React router. Sessions are stored via JSON web tokens </div>
 			<br />
           {close}
         </article>
