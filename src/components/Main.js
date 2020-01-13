@@ -4,6 +4,9 @@ import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
 
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
+
 class Main extends React.Component {
   render() {
     let close = (
@@ -14,6 +17,22 @@ class Main extends React.Component {
         }}
       ></div>
     )
+
+	const workSlider = (
+	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
+	    <div data-src={pic01} />
+	    <div data-src={pic02} />
+	    <div data-src={pic03} />
+	  </AwesomeSlider>
+	);
+
+	const aboutSlider = (
+	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
+	    <div data-src={pic01} />
+	    <div data-src={pic02} />
+	    <div data-src={pic03} />
+	  </AwesomeSlider>
+	);
 
     return (
       <div
@@ -50,7 +69,7 @@ class Main extends React.Component {
         >
           <h2 className="major">Work</h2>
           <span className="image main">
-            <img src={pic02} alt="" />
+		    {workSlider}
           </span>
 		  <b>Starfleet | CLI tool to generate GraphQL projects from existing MongoDB models</b>
 			<div>  ○ Generate GraphQL schema and resolvers with one command from the terminal </div>
@@ -83,7 +102,7 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src={pic03} alt="" />
+			{aboutSlider}
           </span>
           <p>
 		  I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by RabbitMQ, deployed serverless functions on AWS Lambda, and designed a GraphQL API gateway. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. I currently reside in Southern California.
