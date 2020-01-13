@@ -3,6 +3,14 @@ import React from 'react'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
+import tokyo from '../images/tokyo.jpg'
+import kyoto from '../images/kyoto.jpg'
+import peru from '../images/peru.jpg'
+import virtualgroove from '../images/virtualgroove.png'
+import starfleet from '../images/starfleet.png'
+import architecture from '../images/architecture.png'
+import writing from '../images/writing.png'
+
 
 import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
@@ -20,17 +28,17 @@ class Main extends React.Component {
 
 	const workSlider = (
 	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
-	    <div data-src={pic01} />
-	    <div data-src={pic02} />
-	    <div data-src={pic03} />
+		<div data-src={starfleet} />
+		<div data-src={virtualgroove} />
+		<div data-src={architecture} />
 	  </AwesomeSlider>
 	);
 
 	const aboutSlider = (
 	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
-	    <div data-src={pic01} />
-	    <div data-src={pic02} />
-	    <div data-src={pic03} />
+		<div data-src={tokyo} />
+		<div data-src={kyoto} />
+		<div data-src={peru} />
 	  </AwesomeSlider>
 	);
 
@@ -49,7 +57,7 @@ class Main extends React.Component {
         >
           <h2 className="major">Posts</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={writing} alt="" />
           </span>
           <p>
             Some articles I've written. Feel free to check out some of my <a href="#work">other work</a>.
