@@ -8,7 +8,7 @@ import kyoto from '../images/kyoto.jpg'
 import peru from '../images/peru.jpg'
 import virtualgroove from '../images/virtualgroove.png'
 import starfleet from '../images/starfleet.png'
-import architecture from '../images/architecture.png'
+import campfires from '../images/campfires.png'
 import writing from '../images/writing.png'
 
 
@@ -16,6 +16,25 @@ import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 
 class Main extends React.Component {
+
+  constructor() {
+	super();
+	this.state = {
+	  name: '',
+	  email: '',
+	  message: ''
+	};
+  };
+
+  onChange = e => {
+	this.setState({ [e.target.name] : e.target.value })
+  };
+
+  onSubmit = e => {
+	e.preventDefault();
+	console.log(this.state);
+  };
+
   render() {
     let close = (
       <div
@@ -30,7 +49,7 @@ class Main extends React.Component {
 	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
 		<div data-src={starfleet} />
 		<div data-src={virtualgroove} />
-		<div data-src={architecture} />
+		<div data-src={campfires} />
 	  </AwesomeSlider>
 	);
 
@@ -41,6 +60,8 @@ class Main extends React.Component {
 		<div data-src={peru} />
 	  </AwesomeSlider>
 	);
+
+
 
     return (
       <div
@@ -113,7 +134,7 @@ class Main extends React.Component {
 			{aboutSlider}
           </span>
           <p>
-		  I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by RabbitMQ, deployed serverless functions on AWS Lambda, and designed a GraphQL API gateway. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. I currently reside in Southern California.
+		  I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by RabbitMQ, developed a CLI to generate GraphQL services, and designed serverless authentication flow using AWS Lambda. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. I currently reside in Southern California.
           </p>
           {close}
         </article>
@@ -129,19 +150,19 @@ class Main extends React.Component {
           <form method="post" action="#">
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" value={this.state.value} onChange={this.onChange} />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="text" name="email" id="email" value={this.state.email} onChange={this.onChange} />
             </div>
             <div className="field">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+			  <textarea name="message" id="message" rows="4" value={this.state.message} onChange={this.onChange} ></textarea>
             </div>
             <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" className="special" />
+				<input type="submit" value="Send Message" className="special" onClick={this.onSubmit} />
               </li>
               <li>
                 <input type="reset" value="Reset" />
@@ -150,7 +171,7 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li>
-              <a href="mailto:mychal.es@protonmail.com" className="icon fa-envelope">
+              <a href='#' alt="mychal[dot]es{at}protonmail[dot]com" className="icon fa-envelope">
                 <span className="label">Email</span>
               </a>
             </li>
