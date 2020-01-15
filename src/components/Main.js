@@ -11,7 +11,7 @@ import starfleet from '../images/starfleet.png'
 import campfires from '../images/campfires.png'
 import writing from '../images/writing.png'
 
-
+import axios from 'axios';
 import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 
@@ -24,6 +24,7 @@ class Main extends React.Component {
 	  email: '',
 	  message: ''
 	};
+	this.baseState = this.state;
   };
 
   onChange = e => {
@@ -32,7 +33,14 @@ class Main extends React.Component {
 
   onSubmit = e => {
 	e.preventDefault();
-	console.log(this.state);
+	axios.post('https://getform.io/f/95f1986a-bca5-4399-b746-84fdc0fcb100', this.state)
+		 .then(res => console.log('Success: ', res))
+		 .catch(err => console.log('Error: ', err));
+  };
+
+  reset = e => {
+	e.preventDefault();
+	this.setState(this.baseState);
   };
 
   render() {
@@ -165,7 +173,7 @@ class Main extends React.Component {
 				<input type="submit" value="Send Message" className="special" onClick={this.onSubmit} />
               </li>
               <li>
-                <input type="reset" value="Reset" />
+                <input type="reset" value="Reset" onClick={this.reset} />
               </li>
             </ul>
           </form>

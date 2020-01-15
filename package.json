@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Hunter Chang",
   "dependencies": {
+    "axios": "^0.19.1",
     "gatsby": "^2.15.28",
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-offline": "^3.0.11",
