@@ -57,7 +57,7 @@ class Main extends React.Component {
             <img src={battlestation} alt="" />
           </span>
           <p>
-            Some articles I've written. </a>.
+            Some articles I've written.
 		  </p>
 		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Intro to GraphQL</a></div>
 		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
