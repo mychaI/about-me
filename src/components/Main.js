@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
-import tokyo from '../images/tokyo.jpg'
-import kyoto from '../images/kyoto.jpg'
-import peru from '../images/peru.jpg'
+import battlestation from '../images/battlestation.png'
 import virtualgroove from '../images/virtualgroove.png'
 import starfleet from '../images/starfleet.png'
 import architecture from '../images/architecture.png'
-import writing from '../images/writing.png'
+import tokyo from '../images/tokyo.jpg'
+import kyoto from '../images/kyoto.jpg'
+import peru from '../images/peru.jpg'
 
 
 import AwesomeSlider from 'react-awesome-slider';
@@ -57,10 +54,10 @@ class Main extends React.Component {
         >
           <h2 className="major">Posts</h2>
           <span className="image main">
-            <img src={writing} alt="" />
+            <img src={battlestation} alt="" />
           </span>
           <p>
-            Some articles I've written. Feel free to check out some of my <a href="#work">other work</a>.
+            Some articles I've written. </a>.
 		  </p>
 		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Intro to GraphQL</a></div>
 		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
