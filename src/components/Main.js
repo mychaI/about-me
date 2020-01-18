@@ -138,9 +138,13 @@ class Main extends React.Component {
           <h2 className="major">About</h2>
           <span className="image main">
 			{aboutSlider}
-          </span>
+		  </span>
+		  <br />
           <p>
-		  I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by RabbitMQ, developed a CLI to generate GraphQL services, and designed serverless authentication flow using AWS Lambda. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. I currently reside in Southern California.
+			I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by message brokers, developed a CLI to generate GraphQL services, and designed a music recommendation algorithm. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. 
+			<br />
+			<br />
+			I currently reside in Southern California.
           </p>
           {close}
         </article>
@@ -156,7 +160,7 @@ class Main extends React.Component {
           <form method="post" action="#">
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" value={this.state.value} onChange={this.onChange} />
+              <input type="text" name="name" id="name" value={this.state.name} onChange={this.onChange} />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
