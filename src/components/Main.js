@@ -12,6 +12,7 @@ import peru from '../images/peru.jpg'
 import axios from 'axios';
 import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
+import Modal from './Modal';
 
 class Main extends React.Component {
 
@@ -20,10 +21,16 @@ class Main extends React.Component {
 	this.state = {
 	  name: '',
 	  email: '',
-	  message: ''
+	  message: '',
+	  open: false
 	};
 	this.baseState = this.state;
+	this.closeModal = this.closeModal.bind(this);
   };
+
+  closeModal = () => {
+	this.setState({ open: false });
+  }
 
   onChange = e => {
 	this.setState({ [e.target.name] : e.target.value })
@@ -32,7 +39,10 @@ class Main extends React.Component {
   onSubmit = e => {
 	e.preventDefault();
 	axios.post('https://getform.io/f/95f1986a-bca5-4399-b746-84fdc0fcb100', this.state)
-		 .then(res => console.log('Success: ', res))
+	     .then(res => {
+		   console.log('Success: ', res)
+		   this.setState({ open: true });
+	     })
 		 .catch(err => console.log('Error: ', err));
   };
 
@@ -200,7 +210,8 @@ class Main extends React.Component {
             </li>
           </ul>
           {close}
-        </article>
+		</article>
+		<Modal open={this.state.open} closeModal={this.closeModal}/>
       </div>
     )
   }
