@@ -192,3 +192,17 @@
 	  border-bottom: none;
 	}
 
+	.modal {
+	  color: #1b1f22;
+	  font-size: 1.5rem;
+	  text-align: center;
+	}
+
+	.close {
+	  position: absolute;
+	  right: 10px;
+	  &:hover {
+		cursor: pointer;
+	  }
+	}
+

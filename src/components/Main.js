@@ -22,7 +22,8 @@ class Main extends React.Component {
 	  name: '',
 	  email: '',
 	  message: '',
-	  open: false
+	  open: false,
+	  modalText: '',
 	};
 	this.baseState = this.state;
 	this.closeModal = this.closeModal.bind(this);
@@ -41,14 +42,37 @@ class Main extends React.Component {
 	axios.post('https://getform.io/f/95f1986a-bca5-4399-b746-84fdc0fcb100', this.state)
 	     .then(res => {
 		   console.log('Success: ', res)
-		   this.setState({ open: true });
+		   if (res.statusText === 'OK') {
+			 this.setState({ 
+			   modalText: 'Thank you for your message!',
+			   open: true 
+			 });
+		   } else {
+			 this.setState({
+			   modalText: 'Oops, something went wrong! Please try again or use another method of contact below',
+			   open: true
+			 });
+		   }
 	     })
-		 .catch(err => console.log('Error: ', err));
+		 .catch(err => {
+			 this.setState({
+			   modalText: 'Oops, something went wrong! Please try again or use another method of contact below',
+			   open: true
+			 });
+		   }
+		 );
   };
 
   reset = e => {
 	e.preventDefault();
 	this.setState(this.baseState);
+  };
+
+  showEmail = () => {
+	this.setState({
+	  modalText: 'mychal {dot} es {at} protonmail {dot} com',
+	  open: true
+	});
   };
 
   render() {
@@ -191,7 +215,7 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li>
-              <a href='#' alt="mychal[dot]es{at}protonmail[dot]com" className="icon fa-envelope">
+              <a href='#' alt="mychal[dot]es{at}protonmail[dot]com" className="icon fa-envelope" onClick={this.showEmail} >
                 <span className="label">Email</span>
               </a>
             </li>
@@ -211,7 +235,7 @@ class Main extends React.Component {
           </ul>
           {close}
 		</article>
-		<Modal open={this.state.open} closeModal={this.closeModal}/>
+		<Modal open={this.state.open} closeModal={this.closeModal} modalText={this.state.modalText} />
       </div>
     )
   }

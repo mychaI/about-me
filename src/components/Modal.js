@@ -7,7 +7,7 @@ const Modal = props => (
 	  <a className='close' onClick={props.closeModal}>
 		&times;
 	  </a>
-	  Lorem ipsum dolor sit amet
+	  {props.modalText}
 	</div>
   </Popup>
 );
