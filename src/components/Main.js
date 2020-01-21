@@ -1,18 +1,24 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import battlestation from '../images/battlestation.png'
-import virtualgroove from '../images/virtualgroove.png'
-import starfleet from '../images/starfleet.png'
-import campfires from '../images/campfires.png'
-import writing from '../images/writing.png'
-import tokyo from '../images/tokyo.jpg'
-import kyoto from '../images/kyoto.jpg'
-import peru from '../images/peru.jpg'
-
 import axios from 'axios';
 import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 import Modal from './Modal';
+
+// Images
+import battlestation from '../images/battlestation.png';
+import virtualgroove from '../images/virtualgroove.png';
+import starfleet from '../images/starfleet.png';
+import campfires from '../images/campfires.png';
+import writing from '../images/writing.png';
+import tokyo from '../images/tokyo.jpg';
+import kyoto from '../images/kyoto.jpg';
+import peru from '../images/peru.jpg';
+
+// Icons
+import graphql from '../icons/graphql.svg';
+import react from '../icons/react.svg';
+
 
 class Main extends React.Component {
 
@@ -131,8 +137,8 @@ class Main extends React.Component {
           <p>
             Some articles I've written on programming. Follow me on <a href='https://dev.to/mychal'>DEV</a> for the latest.
 		  </p>
-		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Tour of GraphQL</a></div>
-		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/><a href='https://dev.to/mychal/protected-routes-with-react-function-components-dh'>Protected Routes with React Function Components</a></div>
+		  <div className='post'><img className='icon-post graphql' src={graphql}/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Tour of GraphQL</a></div>
+		  <div className='post'><img className='icon-post react' src={react}/><a href='https://dev.to/mychal/protected-routes-with-react-function-components-dh'>Protected Routes with React Function Components</a></div>
           {close}
         </article>
 
