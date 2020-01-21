@@ -36,10 +36,7 @@ class Main extends React.Component {
   };
 
   closeModal = () => {
-	this.setState({ 
-	  modalText: '',
-	  open: false 
-	});
+	this.setState({ open: false });
   }
 
   onChange = e => {
@@ -48,12 +45,7 @@ class Main extends React.Component {
 
   onSubmit = e => {
 	e.preventDefault();
-	axios.post('https://getform.io/f/95f1986a-bca5-4399-b746-84fdc0fcb100', 
-	     { 
-		   name: this.state.name,
-		   email: this.state.email,
-		   message: this.state.message
-	     })
+	axios.post('https://getform.io/f/95f1986a-bca5-4399-b746-84fdc0fcb100', this.state)
 	     .then(res => {
 		   console.log('Success: ', res)
 		   if (res.statusText === 'OK') {
@@ -135,7 +127,7 @@ class Main extends React.Component {
             <img src={battlestation} alt="" />
           </span>
           <p>
-            Some articles I've written on programming. Follow me on <a href='https://dev.to/mychal'>DEV</a> for the latest.
+            Some articles I've written on programming. Follow me on <a href='https://dev.to/mychal/'>DEV</a> for the latest.
 		  </p>
 		  <div className='post'><img className='icon-post graphql' src={graphql}/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Tour of GraphQL</a></div>
 		  <div className='post'><img className='icon-post react' src={react}/><a href='https://dev.to/mychal/protected-routes-with-react-function-components-dh'>Protected Routes with React Function Components</a></div>
@@ -167,7 +159,7 @@ class Main extends React.Component {
 			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ broker. Real-time updates are pushed to the client via Socket.io </div>
 			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
 			<br />
-		  <b>Campfires | Social-networking site that let's you tell better stories</b>
+		  <b>Campfires | Social-networking site that let's you better tell your story</b>
 			<div>  ○ Single-page application that utilizes modular React components and Redux for state </div>
 			<div>  ○ Data is stored in a non-relational database for faster development and scaling </div>
 			<div>  ○ Authentication is enforced via Passport.js middleware and private route components in conjunction with React router. Sessions are stored via JSON web tokens </div>
