@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Hunter Chang",
   "dependencies": {
+    "axios": "^0.19.1",
     "gatsby": "^2.15.28",
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-offline": "^3.0.11",
@@ -11,8 +12,10 @@
     "gatsby-plugin-sass": "^2.1.17",
     "node-sass": "^4.12.0",
     "react": "^16.10.0",
+    "react-awesome-slider": "^3.0.5",
     "react-dom": "^16.10.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "reactjs-popup": "^1.5.0"
   },
   "keywords": [
     "gatsby"

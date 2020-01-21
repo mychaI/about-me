@@ -1,10 +1,88 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
+import battlestation from '../images/battlestation.png'
+import virtualgroove from '../images/virtualgroove.png'
+import starfleet from '../images/starfleet.png'
+import campfires from '../images/campfires.png'
+import writing from '../images/writing.png'
+import tokyo from '../images/tokyo.jpg'
+import kyoto from '../images/kyoto.jpg'
+import peru from '../images/peru.jpg'
+
+import axios from 'axios';
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
+import Modal from './Modal';
 
 class Main extends React.Component {
+
+  constructor() {
+	super();
+	this.state = {
+	  name: '',
+	  email: '',
+	  message: '',
+	  open: false,
+	  modalText: '',
+	};
+	this.baseState = this.state;
+	this.closeModal = this.closeModal.bind(this);
+  };
+
+  closeModal = () => {
+	this.setState({ 
+	  modalText: '',
+	  open: false 
+	});
+  }
+
+  onChange = e => {
+	this.setState({ [e.target.name] : e.target.value })
+  };
+
+  onSubmit = e => {
+	e.preventDefault();
+	axios.post('https://getform.io/f/95f1986a-bca5-4399-b746-84fdc0fcb100', 
+	     { 
+		   name: this.state.name,
+		   email: this.state.email,
+		   message: this.state.message
+	     })
+	     .then(res => {
+		   console.log('Success: ', res)
+		   if (res.statusText === 'OK') {
+			 this.setState({ 
+			   modalText: 'Thank you for your message!',
+			   open: true 
+			 });
+		   } else {
+			 this.setState({
+			   modalText: 'Oops, something went wrong! Please try again or use another method of contact below',
+			   open: true
+			 });
+		   }
+	     })
+		 .catch(err => {
+			 this.setState({
+			   modalText: 'Oops, something went wrong! Please try again or use another method of contact below',
+			   open: true
+			 });
+		   }
+		 );
+  };
+
+  reset = e => {
+	e.preventDefault();
+	this.setState(this.baseState);
+  };
+
+  showEmail = () => {
+	this.setState({
+	  modalText: 'mychal {dot} es {at} protonmail {dot} com',
+	  open: true
+	});
+  };
+
   render() {
     let close = (
       <div
@@ -14,6 +92,24 @@ class Main extends React.Component {
         }}
       ></div>
     )
+
+	const workSlider = (
+	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
+		<div data-src={starfleet} />
+		<div data-src={virtualgroove} />
+		<div data-src={campfires} />
+	  </AwesomeSlider>
+	);
+
+	const aboutSlider = (
+	  <AwesomeSlider cssModule={AwesomeSliderStyles}>
+		<div data-src={tokyo} />
+		<div data-src={kyoto} />
+		<div data-src={peru} />
+	  </AwesomeSlider>
+	);
+
+
 
     return (
       <div
@@ -30,14 +126,13 @@ class Main extends React.Component {
         >
           <h2 className="major">Posts</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={battlestation} alt="" />
           </span>
           <p>
-            Some articles I've written. Feel free to check out some of my <a href="#work">other work</a>.
+            Some articles I've written on programming. Follow me on <a href='https://dev.to/mychal'>DEV</a> for the latest.
 		  </p>
-		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Intro to GraphQL</a></div>
-		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
-		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/>React Hooks</div>
+		  <div className='post'><img className='icon-post graphql' src='/icons/graphql-icon.svg'/><a href='https://dev.to/mychal/a-brief-tour-of-graphql-4lcg'>A Brief Tour of GraphQL</a></div>
+		  <div className='post'><img className='icon-post react' src='/icons/react-brands.svg'/><a href='https://dev.to/mychal/protected-routes-with-react-function-components-dh'>Protected Routes with React Function Components</a></div>
           {close}
         </article>
 
@@ -50,7 +145,7 @@ class Main extends React.Component {
         >
           <h2 className="major">Work</h2>
           <span className="image main">
-            <img src={pic02} alt="" />
+		    {workSlider}
           </span>
 		  <b>Starfleet | CLI tool to generate GraphQL projects from existing MongoDB models</b>
 			<div>  ○ Generate GraphQL schema and resolvers with one command from the terminal </div>
@@ -66,7 +161,7 @@ class Main extends React.Component {
 			<div>  ○ Recommendation logic runs on a separate server that communicates with the main app via a RabbitMQ broker. Real-time updates are pushed to the client via Socket.io </div>
 			<div>  ○ Data from Spotify's API is stored on a PostgreSQL instance running on AWS RDS </div>
 			<br />
-		  <b>Campfires | Social-networking site that let's you better tell your story</b>
+		  <b>Campfires | Social-networking site that let's you tell better stories</b>
 			<div>  ○ Single-page application that utilizes modular React components and Redux for state </div>
 			<div>  ○ Data is stored in a non-relational database for faster development and scaling </div>
 			<div>  ○ Authentication is enforced via Passport.js middleware and private route components in conjunction with React router. Sessions are stored via JSON web tokens </div>
@@ -83,10 +178,14 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src={pic03} alt="" />
-          </span>
+			{aboutSlider}
+		  </span>
+		  <br />
           <p>
-		  I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by RabbitMQ, deployed serverless functions on AWS Lambda, and designed a GraphQL API gateway. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. I currently reside in Southern California.
+			I build things for the modern web. My main stack is Node.js/Express on the backend and React on the frontend (often with Redux). In the past, I've built microservices connected by message brokers, developed a CLI to generate GraphQL services, and designed a music recommendation algorithm. Aside from coding, I am an aspiring woodworker, travel photographer, mechanical keyboard enthusiast, camping minimalist, and parent to a rather feisty, but loving dog. 
+			<br />
+			<br />
+			I currently reside in Southern California.
           </p>
           {close}
         </article>
@@ -102,28 +201,28 @@ class Main extends React.Component {
           <form method="post" action="#">
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" value={this.state.name} onChange={this.onChange} />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="text" name="email" id="email" value={this.state.email} onChange={this.onChange} />
             </div>
             <div className="field">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+			  <textarea name="message" id="message" rows="4" value={this.state.message} onChange={this.onChange} ></textarea>
             </div>
             <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" className="special" />
+				<input type="submit" value="Send Message" className="special" onClick={this.onSubmit} />
               </li>
               <li>
-                <input type="reset" value="Reset" />
+                <input type="reset" value="Reset" onClick={this.reset} />
               </li>
             </ul>
           </form>
           <ul className="icons">
             <li>
-              <a href="mailto:mychal.es@protonmail.com" className="icon fa-envelope">
+              <a href='#' alt="mychal[dot]es{at}protonmail[dot]com" className="icon fa-envelope" onClick={this.showEmail} >
                 <span className="label">Email</span>
               </a>
             </li>
@@ -142,7 +241,8 @@ class Main extends React.Component {
             </li>
           </ul>
           {close}
-        </article>
+		</article>
+		<Modal open={this.state.open} closeModal={this.closeModal} modalText={this.state.modalText} />
       </div>
     )
   }
