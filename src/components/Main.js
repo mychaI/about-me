@@ -145,6 +145,7 @@ class Main extends React.Component {
           <span className="image main">
 		    {workSlider}
           </span>
+		  <br />
 		  <b>Starfleet | CLI tool to generate GraphQL projects from existing MongoDB models</b>
 			<div>  ○ Generate GraphQL schema and resolvers with one command from the terminal </div>
 			<div>  ○ Deploy projects via Docker containers for rapid development and testing </div>
